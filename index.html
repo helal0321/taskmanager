@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#10111b">
+  <title>أورا فوكس — اعثر على تركيزك</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5c2.5 3.2 4.4 5.3 4.4 8.3A4.4 4.4 0 0 1 7.6 12c0-3 1.9-5.1 4.4-8.5Z"/><path d="M12 9.5c.9 1.2 1.5 2 1.5 3.1a1.5 1.5 0 0 1-3 0c0-1.1.6-1.9 1.5-3.1Z"/><path d="M5 19.5h14"/></svg>
+        </div>
+        <div><p class="brand-name">أورا فوكس</p><p class="brand-caption">مساحة للتركيز</p></div>
+      </div>
+      <div class="date-label" id="date-label"></div>
+    </header>
+
+    <section class="welcome" aria-label="ترحيب">
+      <p class="eyebrow">مساحة صغيرة لالتقاط الأنفاس</p>
+      <h1>اعثر على إيقاعك.</h1>
+      <p>خطوة واحدة في كل مرة. أنت قادر على ذلك.</p>
+    </section>
+
+    <div class="dashboard">
+      <section class="card clock-card" aria-labelledby="clock-heading">
+        <div class="section-heading">
+          <h2 id="clock-heading">الوقت المحلي</h2>
+          <span class="session-count"><span class="session-dot" aria-hidden="true"></span><span>ساعة مباشرة</span></span>
+        </div>
+        <div class="clock-wrap" role="timer" aria-label="الوقت المحلي" aria-live="off">
+          <svg class="clock-ring" viewBox="0 0 200 200" aria-hidden="true">
+            <defs><linearGradient id="ringGradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#b9a5ff"/><stop offset="100%" stop-color="#78d8ce"/></linearGradient></defs>
+            <circle class="clock-ring-track" cx="100" cy="100" r="88"></circle>
+            <circle class="clock-ring-outline" cx="100" cy="100" r="88"></circle>
+          </svg>
+          <svg class="analog-face" viewBox="0 0 200 200" role="img" aria-label="واجهة ساعة بعقارب">
+            <circle class="dial-face" cx="100" cy="100" r="83"></circle>
+            <g class="dial-ticks" id="dial-ticks" aria-hidden="true"></g>
+            <g class="dial-numbers" aria-hidden="true">
+              <text x="100" y="49">١٢</text>
+              <text x="125.5" y="55.8">١</text>
+              <text x="144" y="74">٢</text>
+              <text x="151" y="104">٣</text>
+              <text x="144" y="131">٤</text>
+              <text x="125" y="150">٥</text>
+              <text x="100" y="157">٦</text>
+              <text x="75" y="150">٧</text>
+              <text x="56" y="131">٨</text>
+              <text x="49" y="104">٩</text>
+              <text x="56" y="74">١٠</text>
+              <text x="75" y="55.8">١١</text>
+            </g>
+            <line class="clock-hand hour-hand" id="hour-hand" x1="100" y1="104" x2="100" y2="65"></line>
+            <line class="clock-hand minute-hand" id="minute-hand" x1="100" y1="104" x2="100" y2="43"></line>
+            <line class="clock-hand second-hand" id="second-hand" x1="100" y1="111" x2="100" y2="35"></line>
+            <circle class="clock-pin" cx="100" cy="100" r="4.2"></circle>
+          </svg>
+        </div>
+        <div class="clock-digital" aria-hidden="true">
+          <span class="clock-time" id="clock-time">--:--</span>
+          <span class="clock-period" id="clock-period"></span>
+          <span class="clock-seconds" id="clock-seconds">--</span>
+        </div>
+        <span class="clock-caption">وقتك المحلي</span>
+        <p class="clock-message" id="clock-message">التقط أنفاسك واعثر على إيقاعك.</p>
+      </section>
+
+      <div class="side-column">
+        <section class="card side-card" aria-labelledby="sounds-heading">
+          <div class="section-heading">
+            <h2 id="sounds-heading">أصوات هادئة</h2>
+            <span class="heading-meta" id="sound-status">اختر أجواءك</span>
+          </div>
+          <div class="sound-grid">
+            <button class="sound-card" type="button" data-sound="rain" aria-pressed="false" aria-label="تشغيل صوت المطر">
+              <span class="sound-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 14.5a4.5 4.5 0 0 1 .8-8.9A6 6 0 0 1 18 7.5a3.5 3.5 0 0 1 .5 7"/><path d="m8 17-1 2m5-2-1 2m5-2-1 2"/></svg></span>
+              <span><span class="sound-name">المطر</span><span class="sound-state">اضغط للتشغيل</span></span>
+            </button>
+            <button class="sound-card" type="button" data-sound="forest" aria-pressed="false" aria-label="تشغيل أصوات الغابة">
+              <span class="sound-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 6 9h-3l4 6H5l4-6H6l6-9Z"/><path d="M12 18v3"/></svg></span>
+              <span><span class="sound-name">الغابة</span><span class="sound-state">اضغط للتشغيل</span></span>
+            </button>
+            <button class="sound-card" type="button" data-sound="cafe" aria-pressed="false" aria-label="تشغيل أصوات المقهى">
+              <span class="sound-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h12v8a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4V8Z"/><path d="M17 10h1.5a2.5 2.5 0 0 1 0 5H17M8 4v2m4-2v2"/></svg></span>
+              <span><span class="sound-name">المقهى</span><span class="sound-state">اضغط للتشغيل</span></span>
+            </button>
+            <button class="sound-card" type="button" data-sound="fireplace" aria-pressed="false" aria-label="تشغيل صوت المدفأة">
+              <span class="sound-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21a7 7 0 0 0 7-7c0-3-2-5-4-7-.2 2-1 3-2 3.5C13 7 10 4 8 3c.5 4-3 6-3 11a7 7 0 0 0 7 7Z"/><path d="M12 21a3 3 0 0 0 3-3c0-1.4-.8-2.5-2-3.5-.3 1.2-1 1.7-1.5 2C11 15 10 14 9 13c0 2-1 3-1 5a4 4 0 0 0 4 3Z"/></svg></span>
+              <span><span class="sound-name">المدفأة</span><span class="sound-state">اضغط للتشغيل</span></span>
+            </button>
+          </div>
+          <label class="volume-row" for="master-volume">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5Zm4 4a5 5 0 0 1 0 6m3-9a9 9 0 0 1 0 12"/></svg>
+            <input id="master-volume" type="range" min="0" max="100" value="35" aria-label="مستوى الصوت العام">
+            <span class="volume-value" id="volume-value">٣٥٪</span>
+          </label>
+        </section>
+
+        <section class="card side-card" aria-labelledby="tasks-heading">
+          <div class="section-heading">
+            <h2 id="tasks-heading">قائمة مهامك</h2>
+            <span class="heading-meta" id="task-count">٠ مهام</span>
+          </div>
+          <form class="task-input-row" id="task-form">
+            <input class="task-input" id="task-input" type="text" maxlength="160" placeholder="ما الذي يشغل بالك؟" aria-label="مهمة جديدة" autocomplete="off">
+            <button class="add-task" type="submit" aria-label="إضافة مهمة">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+          </form>
+          <ul class="task-list" id="task-list" aria-label="المهام"></ul>
+          <p class="empty-state" id="empty-state">قائمة مرتبة تعني ذهنًا أصفى. أضف مهمة للبدء.</p>
+          <p class="storage-note" id="storage-note" role="status"></p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
